@@ -157,9 +157,9 @@ function publish(symbolSet) {
 	var dstDir;
 
 	var jsPaths = [
-      'jquery-1.7.2.min.js',
-      'accordion.js',
-			'google-code-prettify/prettify.js'
+      	'jquery-1.7.2.min.js',
+      	'accordion.js',
+		'google-code-prettify/prettify.js'
 		];
 	var numOfJsPaths = jsPaths.length;
 	var jsPath;
@@ -173,7 +173,8 @@ function publish(symbolSet) {
 	var cssPaths = [
 			'common.css',
 			'bootstrap/css/bootstrap.min.css',
-			'google-code-prettify/prettify.css'
+			'google-code-prettify/prettify.css',
+			'print.css'
 		];
 	var numOfCssPaths = cssPaths.length;
 	var cssPath;
@@ -190,7 +191,8 @@ function publish(symbolSet) {
 			'img/classicons.png',
 			'img/class.png',
 			'img/interface.png',
-			'img/namespace.png'
+			'img/namespace.png',
+			'img/event.png'
 		];
 	var numOfImgPaths = imgPaths.length;
 	var imgPath;
@@ -242,6 +244,7 @@ function makeSignature(params) {
 				return docTag.name.indexOf('.') == -1; // don't show config params in signature
 		}).map(function(docTag) {
         var result = createTypeLink(docTag.type) + ' ' + docTag.name;
+        if (docTag.defaultValue) result = result + '=' + docTag.defaultValue;
         if (docTag.isOptional) result = '[' + result + ']';
         return result;
 		}).join(', ');

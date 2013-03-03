@@ -288,7 +288,7 @@ Link.prototype.makeSymbolLink_ = function(alias) {
   } else { // if there is no symbol by that name just return the name unaltered
     return linkText;
   }
-  this.setAttribute('href', linkPathUri);
+  this.setAttribute('href', linkPathUri); //TODO : set a name attribute for URL links
   var inner = linkPathUri.getFragment();
   var link = {linkPath: linkPathUri.toString(), linkText: linkText, linkInner: (inner ? '#' + inner : '')};
 

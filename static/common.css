@@ -54,6 +54,10 @@ body {
 	background-position: 0 -66px;
 }
 
+.icon-jsdoc.icon-jsdoc-event {
+	background-position: 0 -110px;
+}
+
 #index .icon-jsdoc {
 	margin-right: 4px;
 }
@@ -240,6 +244,11 @@ body {
 
 .label-jsdoc.label-jsdoc-exceptions {
 	background-color: #fbb450;
+}
+
+.jsdoc-member-default{
+	color: #666666;
+	font-weight:normal;
 }
 
 .jsdoc-member-detail {
